@@ -12,19 +12,25 @@ require_once './database.php';
     <title>Document</title>
 </head>
 <body>
+<style>
+body {
+background-image: url("./222.jpg");
+color: #491217;
+}
+</style>
 <table>
     <?php foreach (getAll() as $product) : ?>
-    <tr>
-        <td><?php echo $product[0] ?></td>
-        <td><?php echo $product[1] ?></td>
-    </tr>
+        <tr>
+            <td><?php echo $product[0] ?></td>
+            <td><?php echo $product[1] ?></td>
+        </tr>
     <?php endforeach; ?>
 </table>
 <div align="center">
-<form action="/messanger/index.php" method="post">
-    <input type="text" name="title" placeholder="Имя">
-    <input type="text" name="price" placeholder="Сообщение">
-    <button type="submit" name="submit">Отправить</button>
+    <form action="./index.php" method="post">
+        <input type="text" name="title" placeholder="Имя">
+        <input type="text" name="price" placeholder="Сообщение">
+        <button type="submit" name="submit">Отправить</button>
 </div>
 </form>
 </body>
